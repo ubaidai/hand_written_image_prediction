@@ -1,5 +1,4 @@
 streamlit
-keras
+tensorflow-cpu==2.13.0
 pillow
 numpy
-h5py
