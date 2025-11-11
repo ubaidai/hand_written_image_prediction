@@ -1,13 +1,13 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-from tensorflow import keras
+import keras
 
 # Load the trained model
 @st.cache_resource
 def load_model():
     try:
-        model = keras.models.load_model('model.h5')
+        model = keras.models.load_model('model.h5', compile=False)
         return model
     except:
         st.error("Model file 'model.h5' not found. Please ensure the model is in the same directory.")
