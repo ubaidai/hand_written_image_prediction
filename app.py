@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import keras
+
 
 # Load the trained model
 @st.cache_resource
@@ -121,3 +121,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
