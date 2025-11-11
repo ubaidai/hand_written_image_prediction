@@ -1,7 +1,9 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import keras
+
+# Keras import
+import tensorflow.keras as keras
 
 # Load the trained model
 @st.cache_resource
