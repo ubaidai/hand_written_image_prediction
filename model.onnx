@@ -1,0 +1,19 @@
+# Install required packages first
+# pip install tf2onnx onnx
+
+import numpy as np
+from tensorflow import keras
+import tf2onnx
+import onnx
+
+# Load your existing model
+model = keras.models.load_model('model.h5')
+
+# Convert to ONNX
+import tensorflow as tf
+spec = (tf.TensorSpec((None, 784), tf.float32, name="input"),)
+model_proto, _ = tf2onnx.convert.from_keras(model, input_signature=spec, opset=13)
+
+# Save ONNX model
+onnx.save(model_proto, "model.onnx")
+print("✅ Model converted to ONNX format!")
