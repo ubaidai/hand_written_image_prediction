@@ -1,12 +1,7 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-
-# Import keras with error handling
-try:
-    from tensorflow import keras
-except ImportError:
-    import keras
+from tensorflow import keras
 
 # Load the trained model
 @st.cache_resource
