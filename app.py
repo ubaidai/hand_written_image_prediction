@@ -1,9 +1,7 @@
 import streamlit as st
 import numpy as np
 from PIL import Image
-import tensorflow as tf
 from tensorflow import keras
-
 
 # Load the trained model
 @st.cache_resource
@@ -91,7 +89,7 @@ def main():
                 'Digit': list(range(10)),
                 'Probability': [f"{p*100:.2f}%" for p in prediction[0]]
             }
-            st.dataframe(prob_df, hide_index=True, use_container_width=True)
+            st.dataframe(prob_df, hide_index=True)
         
         # Show preprocessed image
         with st.expander("View Preprocessed Image (28x28)"):
